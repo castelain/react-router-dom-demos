@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import IndexRouter from './router/index-router';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'mobx-react';
+import Store from './store/index-store';
+import { configure } from 'mobx';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider Store={ Store }>
+        <IndexRouter />
+    </Provider>, 
+    document.getElementById('root')
+);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+configure({
+    enforceActions: 'observed'
+})
+
 serviceWorker.unregister();
