@@ -5,4 +5,9 @@ The basic use of react-router-dom ( this.props.match.params.id )
 The simple example of auth( mobx )
 
 ## demo-3
-Custom links of route( route/children )
+Custom links of route( route component/children )
+
+## demo-4
+To prevent navigation and 404 page( Prompt component and Route without path )
+
+## demo-5
